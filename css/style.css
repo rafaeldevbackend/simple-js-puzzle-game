@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+section#puzzle {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#game {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 2.5em;
+	padding: 1em;
+}
+
+@keyframes animateTheSquare
+ {
+    from {
+        background-color: red;
+    }
+    to { 
+        background-color: blue;
+    }
+}   
+
+#game .puzzle_piece {
+    position: relative;
+    width: 33%;
+    height: 200px;
+    border: 1px solid;
+    text-align: center;
+    background-color: #f1f1f1;
+   font-size: 35pt;
+}
+
+.selected-animation {
+/*    animation-name: animateTheSquare;
+    animation-duration: 900ms;
+    animation-timing-function: ease;
+    animation-delay: 10ms;
+    animation-direction: alternate;
+    animation-play-state: running;  */
+    background-color: #03A9F4!important;
+}
