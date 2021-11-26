@@ -22,16 +22,6 @@ section#puzzle {
 	padding: 1em;
 }
 
-@keyframes animateTheSquare
- {
-    from {
-        background-color: red;
-    }
-    to { 
-        background-color: blue;
-    }
-}   
-
 #game .puzzle_piece {
     position: relative;
     width: 33%;
@@ -43,11 +33,9 @@ section#puzzle {
 }
 
 .selected-animation {
-/*    animation-name: animateTheSquare;
-    animation-duration: 900ms;
-    animation-timing-function: ease;
-    animation-delay: 10ms;
-    animation-direction: alternate;
-    animation-play-state: running;  */
     background-color: #03A9F4!important;
+}
+
+.fail-animation {
+    background-color: red!important;
 }

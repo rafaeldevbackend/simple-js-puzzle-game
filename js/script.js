@@ -88,9 +88,18 @@ const storeSelectedPart = (position) => {
 	selected.push(position);
 }
 
-const animateGame = (index) => {
+const animateGame = (index, test) => {
 	const element = document.getElementsByClassName('puzzle_piece')[index];
-	element.classList.add('selected-animation');
+	if(test) {
+		element.classList.add('selected-animation');
+	} else {
+		element.classList.add('fail-animation');
+	}
+}
+
+const removeGameAnimation = (index) => {
+	const element = document.getElementsByClassName('puzzle_piece')[index];	
+	element.classList.remove('fail-animation');
 }
 
 const select = (event) => {
@@ -103,14 +112,19 @@ const select = (event) => {
 	if(selected.includes(position) == false) {
 		if(selected_part.length == 0) {
 			storeSelectedPart(position);
-			animateGame(position);
+			animateGame(position, test = true);
 		} else {
 			if(identifyMovement(selected_part[0], position)) {
 				storeSelectedPart(position);
-				animateGame(position);
+				animateGame(position, test = true);
 				window.setTimeout(function() {
 					move(position);		
 					reseteSelectPart();
+				}, 600);				
+			} else {
+				animateGame(position, test = false);
+				window.setTimeout(function() {
+					removeGameAnimation(position);
 				}, 600);				
 			}
 		}		
