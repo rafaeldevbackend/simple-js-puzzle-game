@@ -4,14 +4,30 @@
 	box-sizing: border-box;
 }
 
+.center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;           
+}
+
+body {
+    background-color: #322c2c;
+}
+
 main {
     width: 100%;
     min-height: 100vh;
 }
 
 section#puzzle {
-    width: 50%;
-    margin: 0 auto;
+    width: 100%;
+}
+
+.page-title h1 {
+    text-align: center;
+    color: #00b8ff;
 }
 
 #game {
@@ -28,8 +44,8 @@ section#puzzle {
     height: 200px;
     border: 1px solid;
     text-align: center;
-    background-color: #f1f1f1;
-   font-size: 35pt;
+    background-color: #cbb1ab;
+    font-size: 35pt;
 }
 
 .selected-animation {
